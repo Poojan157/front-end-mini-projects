@@ -2,6 +2,10 @@
 
 A responsive signup form built with HTML5 and CSS3, featuring modern design with fluid typography and mobile-first approach.
 
+## Preview
+
+![Signup Page Preview](./signup-page-preview.png)
+
 ## Features
 
 - **Responsive Design**: Uses `clamp()` for fluid typography and spacing
@@ -22,6 +26,7 @@ A responsive signup form built with HTML5 and CSS3, featuring modern design with
 signup-page/
 ├── index.html
 ├── style.css
+├── signup-page-preview.png
 └── README.md
 ```
 
