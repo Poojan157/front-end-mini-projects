@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+
+/* Varaiable Declarations */
+:root{
+    /* Font-Base Size */
+    --base-font-size : clamp(16px ,1.2vw + 12px, 20px); 
+
+    /* spacing >> margins and padding */
+    --space-small : clamp(0.5rem, 1.2vw, 0.9rem);
+    --space-medium : clamp(1rem,2.5vw, 2rem);
+    --space-large: clamp(2rem, 4vw,3rem);
+
+    /* border */
+    --radius : clamp(10px , 1.5vw , 20px);
+    --border-w : clamp(3px, 0.15vw, 4px);
+
+    /* form size */
+    --form-min-w : 300px;
+    --form-preffered-w : 35vw;
+    --form-max-w : 720px;
+
+}
+
+body{
+    min-height: 100vh;
+    min-height : 100dvh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: whitesmoke;
+    font-size : var(--base-font-size);
+
+    padding-inline : var(--space-small);
+}
+
+
+/* inline-flex makes the parent inline level element */
+/* flex makes the parent element the block level element */
+/* flex-direction main axis is row, so main axis is the row */
+/* justify-content works for the main axis */
+/* align-items work for the cross axis */
+
+.main-form{
+    display : flex;
+    justify-content: center;
+    font-size: var(--base-font-size);
+}
+
+.section-form{    
+    width: clamp(var(--form-min-w),var(--form-preffered-w),var(--form-max-w));
+
+    border : var(--border-w) solid darkslategray;
+    border-radius: var(--radius);
+
+    margin : var(--space-large);
+    padding : var(--space-medium);
+
+    background-color : rgb(254, 239, 220);
+    box-shadow : 0 6px 18px rgba(16,16,20,0.06);
+
+    font-size : 1rem;
+
+    /* center and constrain */
+    margin-inline: auto;   /* 1) horiz. center the section when inline-size < available */
+    inline-size: min(
+    100% - calc(2 * var(--space-medium)),        /* A: available width minus gutters */
+    clamp(var(--form-min-w), var(--form-prefferred-w), var(--form-max-w))
+    );                                              /* B: preferred constrained width */
+    max-width: clamp(var(--form-min-w), var(--form-prefferred-w), var(--form-max-w));
+
+      min-inline-size: calc(2 * var(--space-medium) + 2 * var(--border-w) + 1px);
+
+      overflow-wrap: anywhere;
+}
+
+.section-form header h1{
+    text-align: center;
+    margin-bottom: var(--space-small);
+}
+
+.signup-form fieldset{
+    display : flex;
+    flex-direction: column;
+    border: none;
+}
+
+.signup-form legend{
+    text-align: center;
+    margin-bottom: var(--space-medium);
+    font-size: calc(1.2*var(--base-font-size));
+}
+
+.signup-form fieldset label{
+    display: block;
+    width : 100%;
+    margin-bottom: var(--space-small);
+    font-weight: 600;
+}
+
+.signup-form fieldset input[type="text"] ,
+.signup-form fieldset input[type="password"] ,
+ .signup-form fieldset input[type="email"]{
+    display: block;
+    border : 2px solid green;
+    border-radius: var(--radius);
+    background-color: rgba(245, 52, 242, 0.437);
+    width : 100%;
+    margin-bottom: var(--space-small);
+    line-height : 1.5;
+    padding : calc(0.8*var(--space-small)) calc(1.5*var(--space-small));
+    color : blue;
+    font-weight: 500;
+    font-size: var(--base-font-size);
+}
+
+
+.emailInput p{
+    font-size: 0.85rem;
+    margin-bottom: var(--space-small);
+    margin-top: calc(-1 * (var(--space-small) - 0.5rem));
+}
+
+
+.checkboxAggrement{
+    display : flex;
+    color : rgb(54, 130, 54);
+    align-items : baseline;
+}
+
+.checkboxAggrement input{
+    margin-right : calc(0.2*var(--base-font-size));
+}
+.checkboxAggrement label a{
+    color: rgb(82, 12, 75);
+    font-weight: 500;
+}
+
+.checkboxAggrement label a:visited{
+    color : rgb(1, 131, 236);
+}
+
+
+.signup-form fieldset button{
+    background-color : aquamarine;
+    border : var(--border-w) solid green;
+    border-radius : var(--radius);
+    
+    line-height: 1.5;
+    width : 100%;
+    color : black;
+    font-weight: 800;
+    font-size: calc(1.5*var(--base-font-size));
+
+    margin-bottom : var(--space-medium);
+}
+
+.signup-form fieldset button:hover{
+    background-color: skyblue;
+    color : whitesmoke;
+}
+
+.signup-form fieldset span{
+    text-align: center;
+    font-size: calc(0.8*var(--base-font-size));
+}
+
+.signup-form fieldset span a{
+    color : aquamarine;
+}
+.signup-form fieldset span a:visited{
+    color: rgb(1, 131, 236);
+}
