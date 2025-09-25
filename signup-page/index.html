@@ -1,0 +1,52 @@
+<!-- Signup Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class = "main-form">
+        <section class="section-form">
+            <header class="signup-header">
+                <h1>Create Account</h1>
+            </header>
+            <form action="/signup" method="post" class="signup-form" autocomplete="on">
+                <fieldset>
+                    <legend>Join our community today</legend>
+                    
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" required autocomplete="given-name" name="firstName">
+                    
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id = "lastName" required autocomplete="family-name" name="lastName">
+
+                    <div class="emailInput">
+                        <label for="emailAddress">Email *</label>
+                        <input type="email" id="emailAddress" required autocomplete="email" name="email">
+                        <p>We'll use this to send you important updates</p>
+                    </div>    
+
+                    <label for="Password">Password *</label>
+                    <input type="password" id = "Password" required autocomplete="new-password" name="password">
+
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id = "confirmPassword" required autocomplete="new-password" name="confirmPassword">
+
+                    <div class="checkboxAggrement">
+                        <input id="aggrement" type="checkbox" required name = "agreement">
+                        <label for="aggrement">I agree to the <a href="#terms-of-services">Terms of Service</a> and <a href="#privacy-policy">Privacy Policy</a></label>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+
+                    <span>Already have an account? <a href="#login.html">Sign in</a></span>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
